@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "DEVOPS Center Visual Enhancement",
+  "version": "1.67",
+  "author": "Kenneth Brill",
+  "homepage_url": "https://github.com/ken-brill/devops-removed-item-highlighter",
+  "description": "Adds highlighting and autofills the commment section",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.lightning.force.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.lightning.force.com/sf_devops/DevOpsCenter.app*"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Checkbox Scanner - Click to open settings"
+  }
+}
