@@ -10,7 +10,9 @@ A Chrome extension that enhances the Salesforce DevOps Center experience with vi
 
 ### 🎨 Visual Enhancements
 - **Row Highlighting**: Selected rows are highlighted with a customizable background color for easy visual tracking
+
 - **REMOVED Metadata Detection**: Automatically adds red borders to rows containing "REMOVE" operations, helping you avoid problematic deployments
+
 - **File Counter**: Displays a live count of selected files in the header section
 
 ### 🤖 Workflow Automation
@@ -99,7 +101,7 @@ devops-visual-enhancements/
 - ✅ Chrome (Manifest V3)
 - ✅ Edge (Chromium-based)
 - ✅ Brave
-- ❌ Firefox (requires Manifest V2 adaptation) [Coming Soon]
+- ❌ Firefox (requires Manifest V2 adaptation)
 
 ## 🔧 Development
 
