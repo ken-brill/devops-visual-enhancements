@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Checkbox Scanner Settings</title>
+  <title>DevOps Visual Enhancement Settings</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,6 +75,9 @@
     button:hover {
       background-color: #45a049;
     }
+    button:active {
+      transform: scale(0.98);
+    }
     .status {
       margin-top: 15px;
       padding: 10px;
@@ -85,6 +88,13 @@
     .status.success {
       background-color: #d4edda;
       color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+    .status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
       display: block;
     }
     .color-preview {
@@ -96,18 +106,38 @@
       vertical-align: middle;
       margin-left: 10px;
     }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .button-group button {
+      margin-top: 0;
+    }
+    .reset-btn {
+      background-color: #f44336;
+    }
+    .reset-btn:hover {
+      background-color: #da190b;
+    }
+    .keyboard-hint {
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>⚙️ Checkbox Scanner Settings</h1>
+    <h1>⚙️ DevOps Visual Enhancement Settings</h1>
     
     <div class="setting">
       <label class="checkbox-label">
         <input type="checkbox" id="showAlerts">
         <span>Show alerts when checkboxes are clicked</span>
       </label>
-      <div class="description">Display a popup alert with checkbox details</div>
+      <div class="description">Display a popup alert with checkbox details (useful for debugging)</div>
     </div>
 
     <div class="setting">
@@ -115,7 +145,7 @@
         <input type="checkbox" id="highlightRemove" checked>
         <span>Highlight rows containing "REMOVE"</span>
       </label>
-      <div class="description">Add red borders to rows with REMOVE text</div>
+      <div class="description">Add red borders to rows with REMOVE operations to prevent accidental deployments</div>
     </div>
 
     <div class="setting">
@@ -124,22 +154,23 @@
         <input type="color" id="highlightColor" value="#b3d9ff">
         <span class="color-preview" id="colorPreview"></span>
       </div>
-      <div class="description">Background color for selected rows</div>
+      <div class="description">Background color for selected rows (default: light blue)</div>
     </div>
 
     <div class="setting">
       <label for="jiraRegex">JIRA Ticket ID Regex Pattern</label>
       <input type="text" id="jiraRegex" value="[A-Z]+[A-Z0-9]*-\d+" placeholder="[A-Z]+[A-Z0-9]*-\d+">
-      <div class="description">Pattern to match JIRA ticket IDs (e.g., PROJ-123, SF-456)</div>
+      <div class="description">Pattern to match JIRA ticket IDs in page title (e.g., PROJ-123, SF-456)</div>
     </div>
 
     <div class="setting">
       <label for="jiraUrl">JIRA Base URL</label>
       <input type="text" id="jiraUrl" value="https://sangoma.atlassian.net/browse/" placeholder="https://your-domain.atlassian.net/browse/">
-      <div class="description">URL to prepend to the JIRA ticket ID</div>
+      <div class="description">URL to prepend to the JIRA ticket ID for creating links</div>
     </div>
 
     <button id="save">Save Settings</button>
+    <div class="keyboard-hint">💡 Pro tip: Press Ctrl+S (Cmd+S on Mac) to save quickly</div>
     <div class="status" id="status"></div>
   </div>
 
